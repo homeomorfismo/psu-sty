@@ -55,6 +55,17 @@
 \setbeamercolor{block title alerted}{fg=white,bg=psuOrange}
 \setbeamercolor{block body alerted}{fg=black,bg=psuOrange!10}
 
+% Table of contents styling
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamercolor{section in toc}{fg=psuForestGreen}
+\setbeamercolor{subsection in toc}{fg=psuForestGreen}
+\setbeamercolor{subsubsection in toc}{fg=psuForestGreen}
+
+% Optional: Add dots between title and page number
+\setbeamertemplate{section in toc}{\inserttocsectionnumber.~\inserttocsection\par}
+\setbeamertemplate{subsection in toc}{\leavevmode\leftskip=1.5em\inserttocsubsection\par}
+\setbeamertemplate{subsubsection in toc}{\leavevmode\leftskip=3em\inserttocsection\par}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Title page
 

@@ -10,7 +10,8 @@ STYLE = *.sty
 BUILD_DIR = build
 
 # Define the xelatex command and related
-LATEX = xelatex
+LATEX = latexmk
+LATEX_FLAGS = -pdf -xelatex -interaction=nonstopmode -shell-escape -file-line-error
 PRETTIER = prettier
 PRETTIER_PLUGIN = /opt/homebrew/lib/node_modules/prettier-plugin-latex/dist/prettier-plugin-latex.js
 
@@ -31,7 +32,7 @@ $(BUILD_DIR):
 # Compile the document using xelatex in batch mode and place output in the build directory
 $(BUILD_DIR)/$(MAIN).pdf: $(MAIN).tex | $(BUILD_DIR)
 	@echo "Compiling $(MAIN).tex"
-	$(LATEX) -interaction=batchmode -output-directory=$(BUILD_DIR) $(MAIN).tex
+	@$(LATEX) $(LATEX_FLAGS) -output-directory=$(BUILD_DIR) $(MAIN).tex
 	@if [ $$? -eq 0 ]; then $(MAKE) clean-aux; fi
 	@echo "Compilation complete - $(MAIN).pdf"
 
