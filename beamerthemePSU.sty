@@ -8,6 +8,10 @@
 \usepackage{psu-logos}
 \usepackage{fontspec}
 
+% Define sizes
+\def\LogoSize{1cm}
+
+
 % Set the main font to Acumin Pro
 \setmainfont{Acumin Pro}
 
@@ -37,7 +41,7 @@
       \vskip1em
       \usebeamerfont{date}\insertdate\par
       \vskip1em
-      \PSULogomarkGreen{0.5} % Insert PSU logomark
+      \PSULogomarkGreen{\LogoSize} % Insert PSU logomark
     \end{centering}
     \vfill
 }

@@ -12,17 +12,23 @@ LATEX = xelatex
 # List of auxiliary files to remove
 AUX_FILES = *.aux *.log *.out *.toc *.nav *.snm *.vrb *.fls *.fdb_latexmk
 
+# Remove the default suffixes
+.SUFFIXES:
+
 # Default target to compile the document
 all: $(BUILD_DIR)/$(MAIN).pdf
 
 # Create the build directory if it doesn't exist
 $(BUILD_DIR):
 	mkdir -p $(BUILD_DIR)
+	@echo "Created build directory"
 
 # Compile the document using xelatex in batch mode and place output in the build directory
 $(BUILD_DIR)/$(MAIN).pdf: $(MAIN).tex | $(BUILD_DIR)
+	@echo "Compiling $(MAIN).tex"
 	$(LATEX) -interaction=batchmode -output-directory=$(BUILD_DIR) $(MAIN).tex
 	@if [ $$? -eq 0 ]; then $(MAKE) clean; fi
+	@echo "Compilation complete - $(MAIN).pdf"
 
 # Clean up auxiliary files in the build directory
 clean:
