@@ -11,51 +11,64 @@
 \date{\today}
 
 \begin{document}
+	% Title page
+	\begin{frame}
+		\titlepage
+	\end{frame}
 
-% Title page
-\begin{frame}
-    \titlepage
-\end{frame}
+	% Introduction slide
+	\begin{frame}
+		\frametitle{Introduction}
+		\begin{itemize}
+			\item This is a sample slide using the PSU Beamer theme.
 
-% Introduction slide
-\begin{frame}
-    \frametitle{Introduction}
-    \begin{itemize}
-        \item This is a sample slide using the PSU Beamer theme.
-        \item The theme incorporates PSU colors and logos.
-        \item The font used is Acumin Pro.
-    \end{itemize}
-    % Insert the PSU logo at the bottom right corner
-    % \psuLogo{color}{0.3}
-\end{frame}
+			\item The theme incorporates PSU colors and logos.
 
-% Another slide
-\begin{frame}
-    \frametitle{Content Slide}
-    \begin{block}{Block Title}
-        This is a block of text within a content slide.
-    \end{block}
-    % Insert the Business Accelerator logo
-    % \businessAcceleratorLogo{black}{0.3}
-\end{frame}
+			\item The font used is Acumin Pro.
+		\end{itemize}
+		% Insert the PSU logo at the bottom right corner
+		% \psuLogo{color}{0.3}
+	\end{frame}
 
-% % Slide with an image
-% \begin{frame}
-%     \frametitle{Slide with an Image}
-%     \begin{center}
-%         \includegraphics[width=0.5\textwidth]{path/to/your/image.png}
-%     \end{center}
-% \end{frame}
+	% PSU color palette slide: primary
+	\begin{frame}
+		\frametitle{PSU Color Palette}
+		\showPSUColorsPrimary
+	\end{frame}
 
-% Conclusion slide
-\begin{frame}
-    \frametitle{Conclusion}
-    \begin{itemize}
-        \item This concludes the sample presentation.
-        \item Thank you for your attention!
-    \end{itemize}
-    % Insert the PSU logo
-    % \psuLogo{color}{0.3}
-\end{frame}
+	% PSU color palette slide: secondary
+	\begin{frame}
+		\frametitle{PSU Color Palette}
+		\showPSUColorsSecondary
+	\end{frame}
 
+	% Another slide
+	\begin{frame}
+		\frametitle{Content Slide}
+		\begin{block}{Block Title}
+			This is a block of text within a content slide.
+		\end{block}
+		% Insert the Business Accelerator logo
+		% \businessAcceleratorLogo{black}{0.3}
+	\end{frame}
+
+	% % Slide with an image
+	% \begin{frame}
+	%     \frametitle{Slide with an Image}
+	%     \begin{center}
+	%         \includegraphics[width=0.5\textwidth]{path/to/your/image.png}
+	%     \end{center}
+	% \end{frame}
+
+	% Conclusion slide
+	\begin{frame}
+		\frametitle{Conclusion}
+		\begin{itemize}
+			\item This concludes the sample presentation.
+
+			\item Thank you for your attention!
+		\end{itemize}
+		% Insert the PSU logo
+		% \psuLogo{color}{0.3}
+	\end{frame}
 \end{document}
