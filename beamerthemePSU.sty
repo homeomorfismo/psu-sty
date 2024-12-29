@@ -24,14 +24,18 @@
 
 % Set font to Acumin Pro
 % TODO: This doesn't work
-\setmainfont{Acumin Pro}
+\setmainfont{Acumin Pro}[
+    UprightFont=*-Regular,
+    BoldFont=*-Bold,
+    ItalicFont=*-Italic,
+]
 
 % Set the font theme
 % \usefonttheme{Acumin} % TODO: This doesn't work
 \setbeamerfont{title}{size=\LARGE, series=\bfseries}
 \setbeamerfont{subtitle}{size=\large, series=\bfseries}
-\setbeamerfont{author}{size=\normalsize}
-\setbeamerfont{institute}{size=\small}
+\setbeamerfont{author}{size=\large}
+\setbeamerfont{institute}{size=\normalsize}
 \setbeamerfont{date}{size=\small}
 \setbeamerfont{frametitle}{series=\bfseries}
 \setbeamerfont{section in toc}{series=\bfseries}
@@ -41,43 +45,31 @@
 
 % Define the title page template with options for color and logos
 \defbeamertemplate*{title page}{psu}[1][
-    titlebg=psuForestGreen,
     titlefg=psuElectricGreen,
     left_logo=\PSULogoHorizontalWhite{\LogoSize},
     center_logo={},
     right_logo={}
 ]{
-    %\vbox{}
-    \vfill
-    \begin{centering}
-        \colorbox{\pgfkeysvalueof{/title page/titlebg}}{
-            \parbox{\textwidth}{
-                \vspace*{1cm}
-                \raggedright
-                {\usebeamerfont{title}\color{\pgfkeysvalueof{/title page/titlefg}}\textit{\inserttitle}}\par
-                \vskip0.5em
-                {\usebeamerfont{subtitle}\color{\pgfkeysvalueof{/title page/titlefg}}\insertsubtitle}\par
-                \vskip1em
-                {\usebeamerfont{author}\insertauthor}\par
-                \vskip0.5em
-                {\usebeamerfont{institute}\insertinstitute}\par
-                \vskip0.5em
-                {\usebeamerfont{date}\insertdate}\par
-                \vskip1em
-                \hspace{0.5cm}\pgfkeysvalueof{/title page/left_logo}
-                \hfill\hspace{0.5cm} \pgfkeysvalueof{/title page/center_logo}\hspace{0.5cm}
-                \hfill\pgfkeysvalueof{/title page/right_logo}\hspace{0.5cm}
-                \vspace*{1cm}
-            }
-        }
-    \end{centering}
-    \vfill
+    \vspace*{1cm}
+    \raggedright
+    {\usebeamerfont{title}\color{\pgfkeysvalueof{/title page/titlefg}}\textit{\inserttitle}}\par
+    \vskip0.5em
+    {\usebeamerfont{subtitle}\color{\pgfkeysvalueof{/title page/titlefg}}\insertsubtitle}\par
+    \vskip1em
+    {\usebeamerfont{author}\color{\pgfkeysvalueof{/title page/titlefg}}\insertauthor}\par
+    \vskip0.5em
+    {\usebeamerfont{institute}\color{\pgfkeysvalueof{/title page/titlefg}}\insertinstitute}\par
+    \vskip0.5em
+    {\usebeamerfont{date}\color{\pgfkeysvalueof{/title page/titlefg}}\insertdate}\par
+    \vskip1em
+    \pgfkeysvalueof{/title page/left_logo}
+    \hfill\hspace{0.5cm} \pgfkeysvalueof{/title page/center_logo}\hspace{0.5cm}
+    \hfill\pgfkeysvalueof{/title page/right_logo}
 }
 
 % Define key handlers for the title page template options
 \pgfkeys{
     /title page/.is family, /title page,
-    titlebg/.initial=psuForestGreen,
     titlefg/.initial=psuElectricGreen,
     left_logo/.initial=\PSULogoHorizontalWhite{\LogoSize},
     center_logo/.initial={},
@@ -86,12 +78,21 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Set the frame title
-\defbeamertemplate*{frametitle}{psu}[1][]{
+\defbeamertemplate*{frametitle}{psu}[1][
+    title=psuForestGreen,
+]{
     \vbox{}
     \vskip1em
     \begin{centering}
-        \usebeamerfont{frametitle}\usebeamercolor[fg]{frametitle}\insertframetitle\par
+        % \usebeamerfont{frametitle}\usebeamercolor[fg]{frametitle}\insertframetitle\par
+        \usebeamerfont{frametitle}\color{\pgfkeysvalueof{/frametitle/title}}\insertframetitle\par
     \end{centering}
     \vskip1em
     \nointerlineskip
+}
+
+% Define key handlers for the frame title template options
+\pgfkeys{
+    /frametitle/.is family, /frametitle,
+    title/.initial=psuForestGreen
 }

@@ -2,6 +2,14 @@
 
 % Use the PSU theme
 \usetheme{PSU}
+\usepackage{psu-colors}
+\usepackage{psu-logos}
+
+\setmainfont{Acumin Pro}[
+    UprightFont=*-Regular,
+    BoldFont=*-Bold,
+    ItalicFont=*-Italic,
+]
 
 % Title and author information
 \title{Portland State University Beamer Template}
@@ -12,9 +20,12 @@
 
 \begin{document}
 	% Title page
-	\begin{frame}
+    {
+        \setbeamercolor{background canvas}{bg=psuForestGreen}
+    \begin{frame}
 		\titlepage
 	\end{frame}
+    }
 
 	% Introduction slide
 	\begin{frame}
