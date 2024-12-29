@@ -6,9 +6,32 @@ guidelines provided in the
 
 ## Logos
 
+The `Logos/PSU` directory contains the official PSU logo in various formats. We
+have different file formats in theirs own subdirectories.
+
+```
+Logos/PSU
+├── EPS
+│   ├── PSU_Logo_Horizontal
+│   ├── PSU_Logo_Vertical
+│   └── PSU_Logomark
+├── JPEG
+│   ├── PSU_Logo_Horizontal
+│   ├── PSU_Logo_Vertical
+│   └── PSU_Logomark
+└── PNG
+    ├── PSU_Logo_Horizontal
+    ├── PSU_Logo_Vertical
+    └── PSU_Logomark
+```
+
+The `Logos/` directory contains logos for various departments and schools at
+PSU.
+
 ```
 .
 ├── Logos
+│   ├── PSU
 │   ├── BusinessAccelerator
 │   ├── CenterforEntrepreneurship
 │   ├── CenterforExecutiveandProfessionalEducaiton
