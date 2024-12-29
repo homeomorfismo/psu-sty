@@ -32,7 +32,7 @@ $(BUILD_DIR):
 $(BUILD_DIR)/$(MAIN).pdf: $(MAIN).tex | $(BUILD_DIR)
 	@echo "Compiling $(MAIN).tex"
 	$(LATEX) -interaction=batchmode -output-directory=$(BUILD_DIR) $(MAIN).tex
-	@if [ $$? -eq 0 ]; then $(MAKE) clean; fi
+	@if [ $$? -eq 0 ]; then $(MAKE) clean-aux; fi
 	@echo "Compilation complete - $(MAIN).pdf"
 
 # Format the LaTeX source files using prettier
@@ -40,11 +40,11 @@ format: $(MAIN).tex $(STYLE)
 	$(PRETTIER) --write --plugin=$(PRETTIER_PLUGIN) $(MAIN).tex
 
 # Clean up auxiliary files in the build directory
-clean:
+clean-aux:
 	rm -f $(BUILD_DIR)/$(AUX_FILES)
 
 # Remove the entire build directory
-clean-all:
+clean:
 	rm -rf $(BUILD_DIR)
 
 # Phony targets

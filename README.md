@@ -4,6 +4,9 @@ This is a simple beamer theme for Portland State University. It is based on the
 guidelines provided in the
 [PSU Brand Guide](https://www.pdx.edu/university-communications/tools-and-templates).
 
+***Check the manual here
+[please](https://drive.google.com/file/d/1m2-AImcFXJxjuIZjMi06b3W2D4EuLpAz/view)***
+
 A `makefile` is provided to compile the example presentation.
 
 ## Logos

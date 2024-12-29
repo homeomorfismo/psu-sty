@@ -4,47 +4,86 @@
 \ProvidesPackage{beamerthemePSU}
 
 % Load essential packages
+\usepackage{fontspec}
+\usepackage{graphicx}
+\usepackage{pgf}
+\usepackage{pgfpages}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\usepackage{pgfkeys}
+\usepackage{tikz}
+
+% Load PSU colors and logos
 \usepackage{psu-colors}
 \usepackage{psu-logos}
-\usepackage{fontspec}
+
+\pgfplotsset{compat=1.18}
 
 % Define sizes
 \def\LogoSize{1cm}
 
-
-% Set the main font to Acumin Pro
+% Set font to Acumin Pro
+% TODO: This doesn't work
 \setmainfont{Acumin Pro}
 
-% Set the color theme
-\setbeamercolor{title}{bg=psuGreen, fg=psuWhite}
-\setbeamercolor{frametitle}{bg=psuForestGreen, fg=psuWhite}
-\setbeamercolor{background canvas}{bg=psuWhite}
-\setbeamercolor{normal text}{fg=psuBlack}
-
 % Set the font theme
+% \usefonttheme{Acumin} % TODO: This doesn't work
 \setbeamerfont{title}{size=\LARGE, series=\bfseries}
+\setbeamerfont{subtitle}{size=\large, series=\bfseries}
+\setbeamerfont{author}{size=\normalsize}
+\setbeamerfont{institute}{size=\small}
+\setbeamerfont{date}{size=\small}
 \setbeamerfont{frametitle}{series=\bfseries}
 \setbeamerfont{section in toc}{series=\bfseries}
 
-% Set the title page
-\defbeamertemplate*{title page}{psu}[1][]{
-    \vbox{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Title page
+
+% Define the title page template with options for color and logos
+\defbeamertemplate*{title page}{psu}[1][
+    titlebg=psuForestGreen,
+    titlefg=psuElectricGreen,
+    left_logo=\PSULogoHorizontalWhite{\LogoSize},
+    center_logo={},
+    right_logo={}
+]{
+    %\vbox{}
     \vfill
     \begin{centering}
-      \usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle\par
-      \vskip0.5em
-      \usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par
-      \vskip1em
-      \usebeamerfont{author}\insertauthor\par
-      \vskip1em
-      \usebeamerfont{institute}\insertinstitute\par
-      \vskip1em
-      \usebeamerfont{date}\insertdate\par
-      \vskip1em
-      \PSULogomarkGreen{\LogoSize} % Insert PSU logomark
+        \colorbox{\pgfkeysvalueof{/title page/titlebg}}{
+            \parbox{\textwidth}{
+                \vspace*{1cm}
+                \raggedright
+                {\usebeamerfont{title}\color{\pgfkeysvalueof{/title page/titlefg}}\textit{\inserttitle}}\par
+                \vskip0.5em
+                {\usebeamerfont{subtitle}\color{\pgfkeysvalueof{/title page/titlefg}}\insertsubtitle}\par
+                \vskip1em
+                {\usebeamerfont{author}\insertauthor}\par
+                \vskip0.5em
+                {\usebeamerfont{institute}\insertinstitute}\par
+                \vskip0.5em
+                {\usebeamerfont{date}\insertdate}\par
+                \vskip1em
+                \hspace{0.5cm}\pgfkeysvalueof{/title page/left_logo}
+                \hfill\hspace{0.5cm} \pgfkeysvalueof{/title page/center_logo}\hspace{0.5cm}
+                \hfill\pgfkeysvalueof{/title page/right_logo}\hspace{0.5cm}
+                \vspace*{1cm}
+            }
+        }
     \end{centering}
     \vfill
 }
+
+% Define key handlers for the title page template options
+\pgfkeys{
+    /title page/.is family, /title page,
+    titlebg/.initial=psuForestGreen,
+    titlefg/.initial=psuElectricGreen,
+    left_logo/.initial=\PSULogoHorizontalWhite{\LogoSize},
+    center_logo/.initial={},
+    right_logo/.initial={}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Set the frame title
 \defbeamertemplate*{frametitle}{psu}[1][]{
