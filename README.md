@@ -4,6 +4,8 @@ This is a simple beamer theme for Portland State University. It is based on the
 guidelines provided in the
 [PSU Brand Guide](https://www.pdx.edu/university-communications/tools-and-templates).
 
+A `makefile` is provided to compile the example presentation.
+
 ## Logos
 
 The `Logos/PSU` directory contains the official PSU logo in various formats. We
