@@ -41,6 +41,21 @@
 \setbeamerfont{section in toc}{series=\bfseries}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Bullet points (itemize) color and style
+\setbeamercolor{itemize item}{fg=psuForestGreen}
+\setbeamercolor{itemize subitem}{fg=psuForestGreen}
+\setbeamercolor{itemize subsubitem}{fg=psuForestGreen}
+
+% Block colors
+\setbeamercolor{block title}{fg=white,bg=psuStone}
+\setbeamercolor{block body}{fg=black,bg=psuStone!10}
+
+% Alert block colors
+\setbeamercolor{block title alerted}{fg=white,bg=psuOrange}
+\setbeamercolor{block body alerted}{fg=black,bg=psuOrange!10}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Title page
 
 % Define the title page template with options for color and logos
@@ -84,10 +99,11 @@
     \vbox{}
     \vskip1em
     \begin{centering}
-        % \usebeamerfont{frametitle}\usebeamercolor[fg]{frametitle}\insertframetitle\par
         \usebeamerfont{frametitle}\color{\pgfkeysvalueof{/frametitle/title}}\insertframetitle\par
     \end{centering}
-    \vskip1em
+    \vskip0.5em
+    {\color{\pgfkeysvalueof{/frametitle/title}}\hrule height 1pt width\textwidth}
+    \vskip0.5em
     \nointerlineskip
 }
 
