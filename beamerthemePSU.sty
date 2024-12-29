@@ -72,9 +72,9 @@
 % Define the title page template with options for color and logos
 \defbeamertemplate*{title page}{psu}[1][
     titlefg=psuElectricGreen,
-    left_logo=\PSULogoHorizontalWhite{\LogoSize},
-    center_logo={},
-    right_logo={}
+    leftlogo=\PSULogoHorizontalWhite{\LogoSize},
+    centerlogo={},
+    rightlogo={}
 ]{
     \vspace*{1cm}
     \raggedright
@@ -88,18 +88,18 @@
     \vskip0.5em
     {\usebeamerfont{date}\color{\pgfkeysvalueof{/title page/titlefg}}\insertdate}\par
     \vskip1em
-    \pgfkeysvalueof{/title page/left_logo}
-    \hfill\hspace{0.5cm} \pgfkeysvalueof{/title page/center_logo}\hspace{0.5cm}
-    \hfill\pgfkeysvalueof{/title page/right_logo}
+    \pgfkeysvalueof{/title page/leftlogo}
+    \hfill\hspace{0.5cm} \pgfkeysvalueof{/title page/centerlogo}\hspace{0.5cm}
+    \hfill\pgfkeysvalueof{/title page/rightlogo}
 }
 
 % Define key handlers for the title page template options
 \pgfkeys{
     /title page/.is family, /title page,
     titlefg/.initial=psuElectricGreen,
-    left_logo/.initial=\PSULogoHorizontalWhite{\LogoSize},
-    center_logo/.initial={},
-    right_logo/.initial={}
+    leftlogo/.initial=\PSULogoHorizontalWhite{\LogoSize},
+    centerlogo/.initial={},
+    rightlogo/.initial={}
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
