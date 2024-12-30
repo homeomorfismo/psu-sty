@@ -107,14 +107,14 @@
 \defbeamertemplate*{frametitle}{psu}[1][
     title=psuForestGreen,
 ]{
-    \vbox{}
-    \vskip1em
+    \nointerlineskip
+    \vskip0.5em
     \begin{centering}
         \usebeamerfont{frametitle}\color{\pgfkeysvalueof{/frametitle/title}}\insertframetitle\par
     \end{centering}
-    \vskip0.5em
+    \vskip0.25em
     {\color{\pgfkeysvalueof{/frametitle/title}}\hrule height 1pt width\textwidth}
-    \vskip0.5em
+    \vskip0.25em
     \nointerlineskip
 }
 
@@ -123,3 +123,26 @@
     /frametitle/.is family, /frametitle,
     title/.initial=psuForestGreen
 }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Footer configuration in the .sty file
+\setbeamertemplate{footline}{%
+    \vskip-1ex
+    \begin{beamercolorbox}[wd=\paperwidth,ht=0.2pt,dp=0pt]{separation line}
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=\paperwidth,ht=3ex,dp=1.5ex,leftskip=1em,rightskip=1em,sep=0.5ex]{footline}
+        \usebeamerfont{footline}%
+        {\tiny\strut\insertshorttitle
+        \hfill \insertshortinstitute
+        \hfill \insertshortauthor
+        \hfill \insertframenumber/\inserttotalframenumber\hspace*{1em}}
+    \end{beamercolorbox}
+}
+
+% Color and style definitions
+\setbeamercolor{footline}{fg=white,bg=psuForestGreen}  % White text on PSU green background
+\setbeamercolor{separation line}{fg=psuForestGreen,bg=psuForestGreen}
+\setbeamerfont{footline}{size=\tiny}
+
+% Add extra space for navigation symbols if needed
+\setbeamertemplate{navigation symbols}{\hspace{1em}}  % Adds padding around navigation symbols
