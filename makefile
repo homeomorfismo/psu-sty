@@ -1,7 +1,7 @@
 # Makefile for compiling LaTeX documents with xelatex and organizing output files
 
 # Define the main document name (without extension)
-MAIN = example-beamer
+EXAMPLES = example-beamer example-syllabus
 
 # List of LaTeX style files
 STYLE = *.sty
@@ -21,32 +21,30 @@ AUX_FILES = *.aux *.log *.out *.toc *.nav *.snm *.vrb *.fls *.fdb_latexmk
 # Remove the default suffixes
 .SUFFIXES:
 
-# Default target to compile the document
-all: $(BUILD_DIR)/$(MAIN).pdf
+# Default target to compile the documents
+all: $(foreach example, $(EXAMPLES), $(BUILD_DIR)/$(example).pdf)
 
 # Create the build directory if it doesn't exist
 $(BUILD_DIR):
 	mkdir -p $(BUILD_DIR)
 	@echo "Created build directory"
 
-# Compile the document using xelatex in batch mode and place output in the build directory
-$(BUILD_DIR)/$(MAIN).pdf: $(MAIN).tex | $(BUILD_DIR)
-	@echo "Compiling $(MAIN).tex"
-	@$(LATEX) $(LATEX_FLAGS) -output-directory=$(BUILD_DIR) $(MAIN).tex
+# Compile the documents using xelatex in batch mode and place output in the build directory
+$(BUILD_DIR)/%.pdf: %.tex $(STYLE) | $(BUILD_DIR)
+	@echo "Compiling $<"
+	@$(LATEX) $(LATEX_FLAGS) -output-directory=$(BUILD_DIR) $<
 	@if [ $$? -eq 0 ]; then $(MAKE) clean-aux; fi
-	@echo "Compilation complete - $(MAIN).pdf"
+	@echo "Compilation complete - $(basename $<).pdf"
 
 # Format the LaTeX source files using prettier
-format: $(MAIN).tex $(STYLE)
-	$(PRETTIER) --write --plugin=$(PRETTIER_PLUGIN) $(MAIN).tex
+format:
+	$(foreach example, $(EXAMPLES), $(PRETTIER) --write --plugin=$(PRETTIER_PLUGIN) $(example).tex;)
 
-# Clean up auxiliary files in the build directory
 clean-aux:
 	rm -f $(BUILD_DIR)/$(AUX_FILES)
 
-# Remove the entire build directory
 clean:
 	rm -rf $(BUILD_DIR)
 
 # Phony targets
-.PHONY: all compile clean clean-all
+.PHONY: all format clean clean-aux

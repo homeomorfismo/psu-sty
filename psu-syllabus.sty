@@ -3,8 +3,8 @@
 
 \RequirePackage{fontspec}
 \RequirePackage{graphicx}
-\RequirePackage{hyperref}
 \RequirePackage[hyphens]{url}
+\RequirePackage{hyperref}
 
 \hypersetup{
     breaklinks=true,
@@ -15,7 +15,7 @@
 
 \newcommand{\course}[1]{\def\@course{#1}}
 \newcommand{\department}[1]{\def\@department{#1}}
-\newcommand{\sectioninfo}[1]{\def\@sectioninfo{#1}}
+\newcommand{\sectionnumber}[1]{\def\@sectionnumber{#1}}
 \newcommand{\CRN}[1]{\def\@CRN{#1}}
 \newcommand{\schedule}[1]{\def\@schedule{#1}}
 \newcommand{\instructor}[1]{\def\@instructor{#1}}
@@ -29,21 +29,154 @@
 \renewcommand{\maketitle}{
     \begin{center}
         \includegraphics[width=\@logoscale\textwidth]{\@logo}
-        {\LARGE \@department\par}
-        {\LARGE \@course\par}
-        {\large \@sectioninfo\par}
-        {\large \@CRN\par}
-        {\large \@schedule\par}
-        \vspace{1em}
-        {\large \textbf{Instructor:} \@instructor\par}
-        {\large \textbf{Office:} \@office\par}
-        {\large \textbf{E-mail:} \href{mailto:\@myemail}{\@myemail}\par}
-        {\large \textbf{Course website:} \url{\@website}\par}
-        {\large \textbf{Student Drop-in Hours:} \@officehours\par}
+        {\LARGE \par\@department\par}
+        {\LARGE \@course \par}
+        {\large \textbf{Section:} \@sectionnumber\par}
+        {\large \textbf{CRN:} \@CRN\par}
+        {\large \textbf{Schedule:} \@schedule\par}
     \end{center}
+    \vspace{1em}
+    {\large \textbf{Instructor:} \@instructor\par}
+    {\large \textbf{Office:} \@office\par}
+    {\large \textbf{E-mail:} \href{mailto:\@myemail}{\@myemail}\par}
+    {\large \textbf{Course website:} \url{\@website}\par}
+    {\large \textbf{Student Drop-in Hours:} \@officehours\par}
     \vspace{2em}
 }
 
 \setmainfont{Acumin Pro}
+
+% I would not expect this to be frequently changed
+\newcommand{\PSUPolicies}{
+	\section*{PSU Policies, Norms, and Resources}
+
+	\subsection*{Academic Integrity}
+	Academic integrity is a vital part of the educational experience at PSU. The Student
+	Code of Conduct is the university’s policy on academic dishonesty. A confirmed
+	violation of that code in this course may result in failure of the course.
+
+	\subsection*{Equity and Inclusion Statement}
+	PSU values diversity and inclusion; we are committed to fostering mutual respect
+	and full participation for all students. My goal is to create a learning
+	environment that is accessible, equitable, inclusive, and welcoming. If any
+	aspects of instruction or course design result in barriers to your inclusion
+	or learning, please notify me.
+
+	\subsection*{Land Acknowledgement Statement}
+	Portland State University is located in the heart of downtown Portland, Oregon
+	in Multnomah County. We honor the Indigenous people whose traditional and ancestral
+	homelands we stand on, the Multnomah, Kathlamet, Clackamas, Tumwater, Watlala
+	bands of the Chinook, the Tualatin Kalapuya and many other indigenous nations of
+	the Columbia River. It is important to acknowledge the ancestors of this place
+	and to recognize that we are here because of the sacrifices forced upon them. In
+	remembering these communities, we honor their legacy, their lives, and their
+	descendants.
+
+	\subsection*{Student Services}
+
+	\subsubsection*{Disability Access Statement}
+	If you have, or think you may have, a disability that may affect your work in this
+	class and feel you need accommodations, contact the Disability Resource Center
+	to schedule an appointment and initiate a conversation about reasonable
+	accommodations. The DRC is at 116 Smith Memorial Student Union, 1825 SW
+	Broadway; 503-725-4150; \href{mailto:drc@pdx.edu}{drc@pdx.edu}.
+
+	\subsubsection*{Student Food Security}
+	Any student who has difficulty affording groceries or accessing sufficient
+	food to eat every day, or who lacks a safe and stable place to live, and
+	believes this may affect their performance in the course, is urged to contact the
+	Committee for Improving Student Food Security for support at
+    \href{mailto:foodhelp@pdx.edu}{foodhelp@pdx.edu}.
+	Please notify me for additional support if you feel comfortable doing so.
+
+	\subsubsection*{Understanding Sexual Misconduct}
+	PSU desires to create a safe campus. As part of that mission, PSU requires all
+	students to take the Understanding Sexual Misconduct and Resources learning
+	module. If you or someone you know has been harassed or assaulted, you can
+	find the appropriate resources on PSU’s Sexual Misconduct Response website.
+
+	\subsubsection*{Title IX Reporting}
+	Students frequently come to me for assistance in matters not related to the
+	course material. Please be aware that PSU’s policies require instructors to report
+	any instance of sexual harassment, sexual and relationship violence and/or
+	other forms of prohibited discrimination to university officials, who will keep
+	the information private. If you would rather share information about these
+	matters with a PSU staff member who does not have these reporting
+	responsibilities and can keep the information confidential, please use these campus
+	resources:
+	\begin{itemize}
+		\item Confidential Advocates: 503-894-7982 or schedule online (for matters regarding
+			sexual harassment and sexual and relationship violence)
+
+		\item Center for Student Health and Counseling: 1880 SW 6th Avenue \#200;
+			503-725-2800
+	\end{itemize}
+
+	\subsubsection*{Discrimination and Bias Incidents}
+	The Office of Equity and Compliance (OEC) addresses complaints of discrimination,
+	discriminatory Harassment, and sexual harassment against employees (faculty
+	and staff). If you or someone you know believes they have been discriminated
+	against, you may file a complaint. Someone from the OEC will contact you to
+	discuss how to best address your complaint. The Bias Review Team (BRT) gathers
+	information on bias incidents that happen on and around campus, and gives
+	resources and support to individuals who experience them. You can report a bias
+	incident you experienced or learned about. A member of the BRT will contact
+	you if you indicate you would like to be contacted.
+
+	\subsubsection*{Religious Accommodations}
+	If you would like to obtain religious accommodations, such as flexibility in attending
+	evening courses or extension on assignments, please contact your instructors. If
+	you need additional assistance, please contact the Office of the Dean of
+	Student Life (DOSL) by emailing \href{mailto:askdos@pdx.edu}{askdos@pdx.edu}.
+
+	\subsubsection*{Cultural Resource Centers}
+	Cultural Resource Centers (CRCs) create a student-centered inclusive
+	environment that enriches the university experience. They honor diversity,
+	explore social justice issues, celebrate cultural traditions, and foster
+	student identities, success, and leadership. They provide opportunities for student
+	leadership, employment, and volunteering; student resources such as computer
+	labs, event, lounge, and study spaces; and extensive programming. All are welcome!
+	\begin{itemize}
+		\item Multicultural Student Center
+
+		\item La Casa Latina Student Center
+
+		\item Native American Student and Community Center
+
+		\item Pan African Commons
+
+		\item Pacific Islander, Asian, and Asian American Student Center
+
+		\item Middle East, North Africa, South Asia Initiative
+	\end{itemize}
+
+	\subsubsection*{The Center for Student Health \& Counseling (SHAC)}
+	The Center for Student Health \& Counseling provides high quality, accessible,
+	medical, counseling, dental, and health promotion services to all PSU students
+	taking 5+ credit hours, regardless of the type of insurance coverage. Office visits
+	at SHAC are FREE! Students taking 1+ credit hours can access SHAC Dental Services.
+	SHAC has an incredible staff of health care professionals who are dedicated to
+	keeping you healthy so you can stay in the classroom and focus on learning. For
+	a full list of services and more information visit
+    \url{https://pdx.edu/health-counseling}.
+
+	\noindent
+	Medical Excuse Notes: The Center for Student Health and Counseling (SHAC) does
+	not provide medical excuse notes for absences from classes, labs, studios or
+	exams, or for missed deadlines due to short-term illness, injury, or other clinical
+	appointments. Visit the SHAC Medical Excuse Policy at
+    \url{https://pdx.edu/health-counseling/medical-excuse-policy}.
+	for more information.
+
+	\noindent
+	Mental Health Emergencies: If you are having a mental health emergency and need
+	to speak with someone immediately, come in to SHAC at ANY time during SHAC
+	hours of operation. After hours and weekends call the Multnomah County Crisis Line
+	503.988.4888 or use the 24/7 mySSP mental health support resource 866.743.7732.
+
+	\noindent
+	Covid-19 FAQ: 503.725.2800 | 1880 SW 6th Ave. Portland UCB Suite 200 |
+    \url{https://pdx.edu/health-counseling}.
+}
 
 \endinput
