@@ -65,6 +65,7 @@
 
 	% Another slide
     \section{Content}
+    \subsection{Block Elements}
 	\begin{frame}
 		\frametitle{Content Slide}
 		\begin{block}{Block Title}
@@ -74,6 +75,42 @@
             This is an alert block of text within a content slide.
         \end{alertblock}
 	\end{frame}
+
+    % Math slide
+    \subsection{Mathematical environments}
+    \begin{frame}
+        \frametitle{Grothendieck Compactness Principle}
+        \begin{alertblock}{Theorem}
+            A norm closed subset $E$ of a Banach space $X$ is norm compact
+            if and only if it is contained in the closed convex hull of a
+            norm null sequence.
+            I.e., $E \subset \overline{\text{conv}}(x_n)$ for some norm null
+            sequence \(x_n \to 0\).
+        \end{alertblock}
+        Grothendieck himself attributes this result to J.~Dieudonné
+        and L.~Schwartz.
+    \end{frame}
+
+    % Showcase other logos
+    \subsection{Other Logos}
+    \begin{frame}
+        Some logos are provided in the \texttt{psu-logos} package: you have
+        paths to the logos, and some direct wrappers...
+        This is subject to change as the logos are not included in the 
+        repository.
+        \frametitle{Other Logos}
+        \begin{figure}
+            \centering
+            \CLASLogoColor{1cm}
+            \caption{College of Liberal Arts and Sciences Logo, in color,
+            with height 1cm.}
+        \end{figure}
+        \begin{figure}
+            \centering
+            \includegraphics[width=0.3\textwidth]{\UHCPath/psu_uhc_4cp.jpg}
+            \caption{University Honors College Logo, in color.}
+        \end{figure}
+    \end{frame}
 
 	% Conclusion slide
     \section{Conclusion}

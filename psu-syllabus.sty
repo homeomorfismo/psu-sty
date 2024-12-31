@@ -23,11 +23,12 @@
 \newcommand{\email}[1]{\def\@myemail{#1}}
 \newcommand{\officehours}[1]{\def\@officehours{#1}}
 \newcommand{\website}[1]{\def\@website{#1}}
+\newcommand{\logo}[1]{\def\@logo{#1}}
+\newcommand{\logoscale}[1]{\def\@logoscale{#1}}
 
-\graphicspath{{./Logos/CollegeOfLiberalArtsandSciences/}}
 \renewcommand{\maketitle}{
     \begin{center}
-        \includegraphics[width=0.2\textwidth]{psu_clas.png}
+        \includegraphics[width=\@logoscale\textwidth]{\@logo}
         {\LARGE \@department\par}
         {\LARGE \@course\par}
         {\large \@sectioninfo\par}

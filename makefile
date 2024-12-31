@@ -1,7 +1,7 @@
 # Makefile for compiling LaTeX documents with xelatex and organizing output files
 
 # Define the main document name (without extension)
-MAIN = example
+MAIN = example-beamer
 
 # List of LaTeX style files
 STYLE = *.sty

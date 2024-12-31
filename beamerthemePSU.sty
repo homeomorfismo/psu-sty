@@ -4,7 +4,6 @@
 \ProvidesPackage{beamerthemePSU}
 
 % Load essential packages
-\usepackage{fontspec}
 \usepackage{graphicx}
 \usepackage{pgf}
 \usepackage{pgfpages}
@@ -23,7 +22,9 @@
 \def\LogoSize{1cm}
 
 % Set font to Acumin Pro
-% TODO: This doesn't work
+\usefonttheme{professionalfonts}
+\usefonttheme{serif}
+\usepackage{fontspec}
 \setmainfont{Acumin Pro}[
     UprightFont=*-Regular,
     BoldFont=*-Bold,
