@@ -1,0 +1,48 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{psu-syllabus}[PSU Syllabus Template]
+
+\RequirePackage{fontspec}
+\RequirePackage{graphicx}
+\RequirePackage{hyperref}
+\RequirePackage[hyphens]{url}
+
+\hypersetup{
+    breaklinks=true,
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue
+}
+
+\newcommand{\course}[1]{\def\@course{#1}}
+\newcommand{\department}[1]{\def\@department{#1}}
+\newcommand{\sectioninfo}[1]{\def\@sectioninfo{#1}}
+\newcommand{\CRN}[1]{\def\@CRN{#1}}
+\newcommand{\schedule}[1]{\def\@schedule{#1}}
+\newcommand{\instructor}[1]{\def\@instructor{#1}}
+\newcommand{\office}[1]{\def\@office{#1}}
+\newcommand{\email}[1]{\def\@myemail{#1}}
+\newcommand{\officehours}[1]{\def\@officehours{#1}}
+\newcommand{\website}[1]{\def\@website{#1}}
+
+\graphicspath{{./Logos/CollegeOfLiberalArtsandSciences/}}
+\renewcommand{\maketitle}{
+    \begin{center}
+        \includegraphics[width=0.2\textwidth]{psu_clas.png}
+        {\LARGE \@department\par}
+        {\LARGE \@course\par}
+        {\large \@sectioninfo\par}
+        {\large \@CRN\par}
+        {\large \@schedule\par}
+        \vspace{1em}
+        {\large \textbf{Instructor:} \@instructor\par}
+        {\large \textbf{Office:} \@office\par}
+        {\large \textbf{E-mail:} \href{mailto:\@myemail}{\@myemail}\par}
+        {\large \textbf{Course website:} \url{\@website}\par}
+        {\large \textbf{Student Drop-in Hours:} \@officehours\par}
+    \end{center}
+    \vspace{2em}
+}
+
+\setmainfont{Acumin Pro}
+
+\endinput
