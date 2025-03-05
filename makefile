@@ -41,7 +41,7 @@ format:
 	$(foreach example, $(EXAMPLES), $(PRETTIER) --write --plugin=$(PRETTIER_PLUGIN) $(example).tex;)
 
 clean-aux:
-	rm -f $(BUILD_DIR)/$(AUX_FILES)
+	$(foreach aux, $(AUX_FILES), rm -f $(BUILD_DIR)/$(aux);)
 
 clean:
 	rm -rf $(BUILD_DIR)
