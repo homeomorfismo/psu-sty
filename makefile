@@ -1,7 +1,7 @@
 # Makefile for compiling LaTeX documents with xelatex and organizing output files
 
 # Define the main document name (without extension)
-EXAMPLES = example-beamer example-syllabus
+EXAMPLES = example-beamer example-syllabus psu-thesis-template
 
 # List of LaTeX style files
 STYLE = *.sty

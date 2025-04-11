@@ -1,0 +1,243 @@
+%% PSU Thesis Template
+%% Based on Portland State University ETD Guidelines
+%% Chicago Style formatting
+
+\documentclass{psu-thesis}
+\usepackage{psu-thesis-chicago}
+
+%% Create a sample bibliography file
+\begin{filecontents}{thesis-bibliography.bib}
+@book{chicago,
+  author = {University of Chicago Press Staff},
+  title = {The Chicago Manual of Style},
+  publisher = {University of Chicago Press},
+  address = {Chicago},
+  year = {2017},
+  edition = {17}
+}
+
+@book{knuth,
+  author = {Donald E. Knuth},
+  title = {The {\TeX}book},
+  publisher = {Addison-Wesley},
+  year = {1986}
+}
+
+@article{lamport,
+  author = {Leslie Lamport},
+  title = {{\LaTeX}: A Document Preparation System},
+  journal = {Addison-Wesley},
+  year = {1994}
+}
+
+@online{portland,
+  author = {{Portland State University}},
+  title = {Graduate School Thesis and Dissertation Information},
+  year = {2025},
+  url = {https://www.pdx.edu/gradschool/thesis-and-dissertation-information},
+  urldate = {2025-04-10}
+}
+\end{filecontents}
+
+%% Tell biblatex where to find the bibliography file
+\addbibresource{thesis-bibliography.bib}
+
+%% Document metadata - CUSTOMIZE THESE
+\title{A Chicago Style Compliant \LaTeX{} Template for Portland State University Theses and Dissertations}
+\author{John A. Smith} % Use your full legal name
+\thesistype{dissertation} % or "thesis"
+\degree{Doctor of Philosophy} % Your full degree name
+\department{Department of Computer Science}
+\graduationmonth{June}
+\graduationyear{2025}
+
+%% Committee members - CUSTOMIZE THESE
+\chair{Professor Jane Doe, Chair}
+\memberOne{Professor Robert Johnson}
+\memberTwo{Professor Emily Chen}
+\memberThree{Professor Michael Williams} % Optional
+\memberFour{Professor Sarah Garcia} % Optional
+
+%% Document format (monograph is default)
+\documentformat{monograph} % or "multi-paper"
+
+\begin{document}
+
+%% Title page
+\maketitle
+
+%% Copyright notice page (optional but recommended)
+\makecopyright
+
+%% Abstract (required) - using renamed environment
+\begin{psuabstract}
+This thesis presents a standardized \LaTeX{} template for Portland State University graduate students that adheres to both the university's formatting requirements and the Chicago Style citation format. The template addresses all necessary formatting elements including proper margins, spacing, pagination, and citation styles. It supports both monograph and multi-paper formats while ensuring accessibility for screen readers and assistive technologies. This document serves as both an example of the template in use and a guide for graduate students preparing their electronic thesis or dissertation (ETD).
+
+\lipsum[1]
+\end{psuabstract}
+
+%% Dedication (optional) - using renamed environment
+\begin{psudedication}
+To all graduate students struggling with formatting requirements.
+\end{psudedication}
+
+%% Acknowledgments (optional) - using renamed environment
+\begin{psuacknowledgments}
+I would like to express my sincere gratitude to my advisor, Professor Jane Doe, for her invaluable guidance, support, and encouragement throughout this research process. Her expertise and insights have been instrumental in shaping this work.
+
+I am also deeply grateful to the members of my committee, Professors Robert Johnson, Emily Chen, Michael Williams, and Sarah Garcia, for their thoughtful feedback and challenging questions that helped refine my research.
+
+\lipsum[2]
+\end{psuacknowledgments}
+
+%% Table of contents (required)
+\tableofcontents
+\clearpage
+
+%% List of tables (required if tables are present)
+\listoftables
+\clearpage
+
+%% List of figures (required if figures are present)
+\listoffigures
+\clearpage
+
+%% Glossary/List of Abbreviations (optional) - using renamed environment
+\begin{psuglossary}
+\begin{description}
+    \item[ETD] Electronic Thesis and Dissertation
+    \item[GS] Graduate School
+    \item[LaTeX] A document preparation system
+    \item[PDF] Portable Document Format
+    \item[PSU] Portland State University
+    \item[TOC] Table of Contents
+\end{description}
+\end{psuglossary}
+
+%% Preface (optional) - using renamed environment
+\begin{psupreface}
+This template was created to help Portland State University graduate students prepare their theses and dissertations according to university requirements while adhering to Chicago Style formatting guidelines. It aims to reduce the formatting burden on students, allowing them to focus on the content of their research.
+
+\lipsum[3]
+\end{psupreface}
+
+%% Start the main body (Arabic numerals begin here)
+\startbody
+
+%% Chapters
+\chapter{Introduction}
+
+This thesis template addresses the formatting requirements for Portland State University graduate students \autocite{portland}. It follows the Chicago Style guidelines as outlined in the Chicago Manual of Style \autocite{chicago}. The template is designed to be easy to use and adapt to individual needs.
+
+\section{Background}
+
+Formatting a thesis or dissertation can be challenging. This template aims to simplify the process by providing a ready-to-use structure that complies with both PSU's requirements and the Chicago Style citation format.
+
+\section{Purpose of the Template}
+
+The main purposes of this template are:
+
+\begin{itemize}
+    \item To ensure consistent formatting throughout the document
+    \item To properly implement Chicago Style citations and bibliography
+    \item To meet all Portland State University Graduate School requirements
+    \item To provide an accessible document structure
+\end{itemize}
+
+\lipsum[4-5]
+
+\chapter{Literature Review}
+
+\lipsum[6-8]
+
+This section would typically review relevant literature from sources like Knuth's \TeX{}book \autocite{knuth} and Lamport's work on \LaTeX{} \autocite{lamport}.
+
+\chapter{Methodology}
+
+\lipsum[9-11]
+
+\section{Research Design}
+\lipsum[12]
+
+\section{Data Collection}
+\lipsum[13]
+
+\section{Analysis Approach}
+\lipsum[14]
+
+\chapter{Results}
+
+\lipsum[15-17]
+
+\section{Primary Findings}
+\lipsum[18]
+
+\section{Secondary Findings}
+\lipsum[19]
+
+\chapter{Discussion}
+
+\lipsum[20-22]
+
+\section{Implications}
+\lipsum[23]
+
+\section{Limitations}
+\lipsum[24]
+
+\chapter{Conclusion}
+
+\lipsum[25-27]
+
+\section{Summary of Contributions}
+\lipsum[28]
+
+\section{Future Work}
+\lipsum[29]
+
+%% References section
+\references[Bibliography]
+% If using biblatex-chicago
+\printchicagobibliography
+
+%% Endnotes (if using Chicago notes style)
+\chapter*{Notes}
+\addcontentsline{toc}{chapter}{Notes}
+\printchicagonotes
+
+%% Appendices
+\appendix
+
+\chapter{Sample Tables and Figures}
+
+\lipsum[30]
+
+\begin{table}[htbp]
+\caption{Sample Table Format for PSU Thesis}
+\centering
+\begin{tabular}{|l|c|r|}
+\hline
+\textbf{Item} & \textbf{Quantity} & \textbf{Value (\$)} \\
+\hline
+Alpha & 10 & 100.00 \\
+Beta & 20 & 200.00 \\
+Gamma & 30 & 300.00 \\
+\hline
+\textbf{Total} & \textbf{60} & \textbf{600.00} \\
+\hline
+\end{tabular}
+\end{table}
+
+\lipsum[31]
+
+\begin{figure}[htbp]
+\centering
+\rule{8cm}{6cm} % This is a placeholder for an actual figure
+\caption{Sample Figure Format for PSU Thesis}
+\end{figure}
+
+\chapter{Additional Resources}
+
+\lipsum[32-35]
+
+\end{document}
