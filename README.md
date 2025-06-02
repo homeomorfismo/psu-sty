@@ -9,7 +9,7 @@ guidelines provided in the
 
 A `makefile` is provided to compile the example presentation.
 
-## Logos
+## Logos (this was removed for obvious reasons)
 
 The `Logos/PSU` directory contains the official PSU logo in various formats. We
 have different file formats in theirs own subdirectories.
